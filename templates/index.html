@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}豆瓣小组爬虫{% endblock %}
+{% block body %}
+<form method="post" enctype=multipart/form-data action="/search">
+    <div class="search-box">
+        <input class="search-txt" type="text" name="website" placeholder="请输入豆瓣小组主页网址...">
+        <button type="submit">
+            <img src="/static/search.svg" />
+        </button>
+    </div>
+</form>
+<div class="pic">
+    {% if(url_pic == "/static/dou.jpg") %}
+    <img src="/static/dou.jpg" style="width:500px;height: 500px;">
+    {% else %}
+    {% set url_pic = "/static/wordcloud0.png" %}
+    <img src={{url_pic}} style="width:500px;height: 500px;"/>
+    {% endif %}
+</div>
+<br><br><br><br><br><br>
+{% endblock %}
